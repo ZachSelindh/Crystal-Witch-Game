@@ -1,0 +1,70 @@
+/* CSS for Crazy Crystal Game */
+
+@font-face {
+    font-family: "Gothic";
+    src: url("../fonts/avertastevia.ttf");
+}
+
+* {
+    font-family: "Gothic" !important;
+}
+
+#toptitle {
+    font-size: 400%
+}
+
+small {
+    font-size: 48%;
+}
+
+body {
+    background: url("../images/crystal-sage.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin: 0.3em auto 0.3em auto;
+    padding: 0.25em;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    letter-spacing: 0.05em;
+    line-height: 0.75em;
+    border: 2px white solid;
+    border-radius: 10px;
+}
+
+p {
+    color: white;
+    margin: auto;
+    margin-left: 1em;
+    font-size: 230%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 0.6em;
+    letter-spacing: 0.02em;
+}
+
+#imagebox {
+    color: white;
+    font-size: 230%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 0.6em;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.crystalbutton {
+    height: 4em;
+    width: 4em;
+    margin: 0.25em;
+}
