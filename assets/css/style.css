@@ -7,6 +7,7 @@
 
 * {
     font-family: "Gothic" !important;
+    box-sizing: border-box;
 }
 
 #toptitle {
@@ -40,14 +41,14 @@ h1 {
 
 p {
     color: white;
-    margin: auto;
-    margin-left: 1em;
-    font-size: 230%;
+    margin: 0.75em;
+    font-size: 210%;
     background-color: rgba(0, 0, 0, 0.3);
     border: 2px white solid;
     border-radius: 10px;
     padding: 0.6em;
     letter-spacing: 0.02em;
+    float: left;
 }
 
 #imagebox {
@@ -59,12 +60,35 @@ p {
     padding: 0.6em;
     letter-spacing: 0.02em;
     overflow: hidden;
-    text-align: center;
-    margin-bottom: 1em;
+    margin: 0.75em;
+    float: right;
 }
 
+#imagebox {
+    width: fit-content;
+}
+
+#scoreboard {
+    font-size: 230%;
+    color: white;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+}
+
+#target-number, #wins-score, #losses-score {
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 0.6em;
+    margin: 0.75em;
+    margin-top: 0.25em;
+    text-align: center;
+}
+
+
+
+
 .crystalbutton {
-    height: 4em;
-    width: 4em;
+    height: 3.5em;
+    width: 3.5em;
     margin: 0.25em;
 }
