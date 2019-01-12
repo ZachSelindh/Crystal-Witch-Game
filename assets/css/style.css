@@ -147,7 +147,7 @@ p {
     }
 }
 
-@media only screen and (max-width:580px) {
+@media only screen and (max-width:530px) {
     #big-card-z {
         height: fit-content;
     }
