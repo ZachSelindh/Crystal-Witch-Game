@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="container"></div>
+    <div class="container">
      <div class="page-header">
       <h1 id="toptitle">Crystal Game <br> <small>Can you survive the witch's trap?</small></h1>
      </div>
@@ -16,7 +16,7 @@
       <div class="col-12 col-md-4">
        <p>
            The crystal sage from Dark Souls 3 has trapped you! She's thinking of a number between 
-            18 and 120. Click a crystal to add a random value to your score and try to match the number.
+            19 and 120. Click a crystal to add a random value to your score and try to match the number.
             But don't go over! 
        </p>    
       </div>
@@ -31,21 +31,41 @@
        </div>
        <div class="row">
         <div class="col-12" id="scoreboard">
-            <div class="row">
-                    <div class="col-9" id="target-number">Target Number: </div>
-            </div>        
-            <div class="row">
-                    <div class="col-xs-12 col-4" id="wins-score">Wins:</div>
-                    <div class="col-xs-12 col-4" id="losses-score">Losses:</div>
+         <div class="row">
+          <div class="col-xs-12 col-4" id="target-number">Target: <span id="target-text"></span></div>
+          <div class="col-xs-12 col-4" id="current-number">Current: <span id="current-text"></span></div>
+         </div>     
+         <div class="row">
+          <div class="col-xs-4 col-3" id="wins-score"> Wins: <span id="wins-text"></span> </div>
+          <div class="col-xs-4 col-3" id="timer"> Time: <span id="time-text"></span> </div>
+          <div class="col-xs-4 col-3" id="losses-score"> Losses: <span id="losses-text"></span> </div>
          </div>        
         </div>
        </div>
       </div>
      </div> 
-     </div>
+     <div class="row"> 
+      <div class="col-xs-12" id="big-card-z">
+       <div id="big-card-text">  
+        Welcome to the Crystal Game! You have two choices: Normal Mode, in which each crystal has a random value 
+        assigned at the start of each game, or Hardcore Mode, in which the values of the crystals will reset 
+        every 10 seconds! Choose a mode, and good luck!
+       </div>  
+        <div class="row">
+         <div class="col-12" id="button-array-z">
+         <button class="col-xs-12 col-5 menu-button-z" id="normal-button">Normal Mode</button>
+         <button class="col-xs-12 col-5 menu-button-z" id="confirm-button">Confirm</button>
+         <button class="col-xs-12 col-5 menu-button-z" id="hardcore-button">Hardcore Mode</button>
+        </div>
+        </div>
+       </div>
+      </div>
+     </div> 
     </div> 
+    
 
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script src="assets/javascript/game.js" type="text/javascript"></script>
 </body>
 </html>
