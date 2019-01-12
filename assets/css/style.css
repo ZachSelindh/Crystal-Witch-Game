@@ -142,9 +142,12 @@ p {
     #big-card-z {
         font-size: 175%;
     }
+    #button-array-z {
+        top: 2em;
+    }
 }
 
-@media only screen and (max-width:530px) {
+@media only screen and (max-width:580px) {
     #big-card-z {
         height: fit-content;
     }
