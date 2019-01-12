@@ -117,7 +117,7 @@ function hardcoreMode() {
     if (hardcore === true) {
         $("#timer").show()
         $("#time-text").html(timeLeft);
-        var downloadTimer = setInterval(function(){
+        var hardcoreTimer = setInterval(function(){
             timeLeft--;
             $("#time-text").html(timeLeft);
         if (timeLeft <= 0)

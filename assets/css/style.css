@@ -111,7 +111,7 @@ p {
 
 #button-array-z {
     position: relative;
-    top: 6em;
+    top: 5em;
     text-align: center;
 }
 
@@ -141,9 +141,10 @@ p {
 @media only screen and (max-width:760px) {
     #big-card-z {
         font-size: 175%;
+        height: fit-content;
     }
     #button-array-z {
-        top: 2em;
+        top: 1em;
     }
 }
 
