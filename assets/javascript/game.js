@@ -63,7 +63,9 @@ function setCrystalValues() {
                 moonValue = 3;
                 console.log("ODDSUB")           
         }
-        console.log("moon=" + moonValue + " blue=" + blueValue + " red=" + redValue + " billy=" + billyValue)                
+
+        /* Commented out console log to check that the crystal values are being processed correctly: */
+        /* console.log("moon=" + moonValue + " blue=" + blueValue + " red=" + redValue + " billy=" + billyValue)   */              
 }    
 
     /* Clears all boards and chooses new values. */
@@ -117,7 +119,7 @@ function hardcoreMode() {
     if (hardcore === true) {
         $("#timer").show()
         $("#time-text").html(timeLeft);
-        var hardcoreTimer = setInterval(function(){
+        setInterval(function(){
             timeLeft--;
             $("#time-text").html(timeLeft);
         if (timeLeft <= 0)

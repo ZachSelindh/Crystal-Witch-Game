@@ -31,7 +31,7 @@ h1 {
     margin: 0.3em auto 0.3em auto;
     padding: 0.25em;
     width: 70%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     letter-spacing: 0.05em;
     line-height: 0.75em;
@@ -44,7 +44,7 @@ p {
     color: white;
     margin: 0.50em;
     font-size: 180%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     border: 2px white solid;
     border-radius: 10px;
     padding: 0.6em;
@@ -55,7 +55,7 @@ p {
 #imagebox {
     color: white;
     font-size: 230%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     border: 2px white solid;
     border-radius: 10px;
     padding: 0.6em;
@@ -75,6 +75,7 @@ p {
 #target-number, #current-number, #wins-score, #timer, #losses-score {
     border: 2px white solid;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.6em;
     margin: auto;
     text-align: center;
@@ -90,6 +91,7 @@ p {
     height: 3.5em;
     width: 3.5em;
     margin: 0.25em;
+    
 }
 
 #big-card-z {
@@ -128,7 +130,6 @@ p {
     display: none;
 }
 
-
 @media only screen and (max-width:930px) {
     #big-card-z {
         top: 50%;
@@ -138,21 +139,46 @@ p {
     }
 }
 
-@media only screen and (max-width:760px) {
+@media only screen and (max-width:769px) {
     #big-card-z {
         font-size: 175%;
-        height: fit-content;
+        height: 60%;
     }
     #button-array-z {
         top: 1em;
+    }
+    .crystalbutton {
+        height: 4.5em;
+        width: 4.5em;
+        margin: 0.25em;
+    }
+}
+
+@media only screen and (max-width:660px) {
+    #big-card-z {
+        height: 75%;
     }
 }
 
 @media only screen and (max-width:530px) {
     #big-card-z {
-        height: fit-content;
+        height: 90%;
     }
     #button-array-z {
         top: 0em;
     }
+    #target-number, #current-number, #wins-score, #timer, #losses-score {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width:410px) {
+    #big-card-z {
+        height: fit-content;
+        overflow: hidden;
+    }
+    #target-number, #current-number, #wins-score, #timer, #losses-score {
+        font-size: 70%;
+    }
+
 }
