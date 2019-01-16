@@ -91,7 +91,10 @@ p {
     height: 3.5em;
     width: 3.5em;
     margin: 0.25em;
-    
+}
+
+#big-card-text {
+    margin-bottom: 3em;
 }
 
 #big-card-z {
@@ -100,11 +103,11 @@ p {
     position: absolute;
     z-index: 999;
     width: 80%;
-    height: 80%;
-    left: 10%;
+    height: fit-content;
     top: 10%;
+    left: 10%;
     font-size: 200%;
-    padding: 1em;
+    padding: 2em;
     color: white; 
     text-align: center;
     background: black;
@@ -113,7 +116,6 @@ p {
 
 #button-array-z {
     position: relative;
-    top: 5em;
     text-align: center;
 }
 
@@ -142,7 +144,7 @@ p {
 @media only screen and (max-width:769px) {
     #big-card-z {
         font-size: 175%;
-        height: 60%;
+        height: fit-content;
     }
     #button-array-z {
         top: 1em;
@@ -156,13 +158,13 @@ p {
 
 @media only screen and (max-width:660px) {
     #big-card-z {
-        height: 75%;
+        height: fit-content;
     }
 }
 
 @media only screen and (max-width:530px) {
     #big-card-z {
-        height: 90%;
+        height: fit-content;
     }
     #button-array-z {
         top: 0em;
