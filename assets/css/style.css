@@ -132,12 +132,12 @@ p {
     display: none;
 }
 
-@media only screen and (max-width:930px) {
+@media only screen and (max-width:900px) {
     #big-card-z {
-        top: 50%;
+        top: 30%;
     }
     #button-array-z {
-        top: 3em;
+        top: 1em;
     }
 }
 
@@ -159,6 +159,9 @@ p {
 @media only screen and (max-width:660px) {
     #big-card-z {
         height: fit-content;
+    }
+    #button-array-z {
+        top: 0em;
     }
 }
 
