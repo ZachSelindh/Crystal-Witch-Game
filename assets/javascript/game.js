@@ -8,7 +8,11 @@ var targetNumber = "";
 
 var currentNumber = 0;
 
-var timeLeft = 10;
+const timeInitial = 10;
+
+var timeLeft = timeInitial;
+
+var timerRunning = false;
 
 var moonValue = "";
 
@@ -18,7 +22,7 @@ var redValue = "";
 
 var billyValue = "";
 
-var hardcore = "";
+var hardcore = false;
 
 $("#current-text").html(currentNumber);
 
@@ -32,13 +36,13 @@ $("#timer").hide()
 function randomNum(x, y) {
                 num = [Math.floor(Math.random() * (y-x+1) + x)]
                 return num;
-}
+};
 
     /* Sets the target value with a random number. */
 function setTargetValue() {
     targetNumber = randomNum(19, 120);
     $("#target-text").html(targetNumber);
-}
+};
 
     /* Sets the values associated with the crystals. Checks if a value is repeated and replaces it. 
     Checks if all numbers are even, and if so, replaces on with 3. */
@@ -62,78 +66,94 @@ function setCrystalValues() {
         if (moonValue%2 == 0 && blueValue%2 == 0 && redValue%2 == 0 && billyValue%2 == 0) {
                 moonValue = 3;
                 console.log("ODDSUB")           
-        }
+        }            
+};
 
-        /* Commented out console log to check that the crystal values are being processed correctly: */
-        /* console.log("moon=" + moonValue + " blue=" + blueValue + " red=" + redValue + " billy=" + billyValue)   */              
-}    
+    /* Ends the current game before beginning another with resetgame. */
+function endCurrentRound() {
+    moonValue = 0; 
+    blueValue = 0;
+    redValue = 0;
+    billyValue = 0;
+    timerRunning = false;
+    clearInterval(timer);
+    $("#big-card-z").fadeIn(400);
+    $("#confirm-button").show();
+};
 
     /* Clears all boards and chooses new values. */
 function resetGame() {
+    if (hardcore === true) {
+        timerRunning = true;
+        timeLeft = timeInitial;
+        $("#time-text").html(timeLeft);
+    }
     currentNumber = 0;
     $("#current-text").html(currentNumber);
     setTargetValue();
     setCrystalValues();
-}
+};
 
     /* Sets up a message and a play again confirm button, adds a win to the score and resets game. */
 function winState() {
-    $("#big-card-z").fadeIn(400)
-    $("#confirm-button").show();
+    endCurrentRound();
     $("#big-card-text").html("Congratulations! You've won! Click Confirm to play again!")
     $("#confirm-button").click(function() {
-        winScore = winScore + 1;
+        $("#confirm-button").hide();
         $("#wins-text").html(winScore);
         resetGame()
         $("#big-card-z").fadeOut(400)
         });
-}
+};
 
     /* Sets up a message and a play again confirm button, adds a loss to the score and resets game. */
 function loseState() {
-    $("#big-card-z").fadeIn(400)
-    $("#confirm-button").show();
+    endCurrentRound();
     $("#big-card-text").html("You lose! The witch has defeated you. Click Confirm to play again.")
     $("#confirm-button").click(function() {
-        lossScore = lossScore + 1;
+        $("#confirm-button").hide();
         $("#losses-text").html(lossScore);
         resetGame()
         $("#big-card-z").fadeOut(400)
         });
-}
+};
 
     /* Checks if the player has won or lost, and acts accordingly! Then resets the board. */
 function winLoseState() {
     if (currentNumber == targetNumber) {
+        winScore++;
         setTimeout(function() {   
         winState();}, 100);
     } else if (currentNumber > targetNumber) {
+        lossScore++;
         setTimeout(function() {
         loseState();}, 100);
     }
-}
+};
 
     /* Sets a timer at 10 seconds, and counts down. After the timer hits 0,
     resets all the crystal values and flashes them for a visual cue. */
 function hardcoreMode() {
     if (hardcore === true) {
+        timerRunning = true;
         $("#timer").show()
         $("#time-text").html(timeLeft);
-        setInterval(function(){
-            timeLeft--;
-            $("#time-text").html(timeLeft);
-        if (timeLeft <= 0)
-            timeLeft= timeLeft + 11;
-            },1000);
-        setInterval(function(){
+        setInterval(timer, 1000);
+    }
+};
+
+function timer() {
+    if (timerRunning === true) {
+    timeLeft--;
+    $("#time-text").html(timeLeft);
+        if (timeLeft <= 0) {
+            timeLeft = timeInitial + 1;
             setCrystalValues();
-            $(".crystalbutton").fadeOut(50)
-            $(".crystalbutton").fadeIn(700)
-        }, 11000);    
+            $(".crystalbutton").fadeOut(50);
+            $(".crystalbutton").fadeIn(700);
+        }
     }
-    else {
-    }
-}
+};
 
 /* Starts the game and sets all variable/values after the Mode button is selected. */
 $("#normal-button, #hardcore-button").click(function(){
